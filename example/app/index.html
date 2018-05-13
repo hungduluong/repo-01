@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-signin-client_id" content="556856449785-17asjevai5frpnvqctijoog53vevl1pu.apps.googleusercontent.com">
+  <title>Driver Home</title>
+
+  <!-- <link href="css/bootstrap.min.css" media="all" rel="stylesheet" />
+  <link href="css/main.css" media="all" rel="stylesheet" /> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+<body ng-app='weyoApp'>
+
+  <!-- <navbar /> -->
+ <div ng-controller='LoginCtrl'>
+   
+   <span ng-click='login("google")'>Login</span>
+ </div>
+  <div>
+    <p>
+      DRIVE TO EARN WITH WEYO
+    </p>
+  </div>
+
+  <div>
+    <p>
+      PAINT THE ROAD WITH YOUR BRAND
+    </p>
+  </div>
+
+  <h2>Start Today</h2>
+
+  <div ng-controller='RegistrationCtrl'>
+    <div ng-show="workflowStep == null">
+      <div ng-click='getDetails("facebook")'>Register using Facebook</div>
+      <div ng-click='getDetails("google")'>Register using Google</div>
+      or <span ng-click="workflowNext('step1')">Register</span>
+    </div>
+    <div class="ng-hide" ng-show="workflowStep == 'step1'">
+      <div ng-if="reg.auth_network != null">You've registered using {{reg.auth_network}}. Please verify your info and fill in any missing fields.</div>
+      <div ng-if="reg.auth_network == null">Please fill in all the fields.</div>
+      <div>
+        <label for="firstName">First Name:</label>
+        <input type="text" ng-model="reg.firstName" placeholder=" i.e. John" required autofocus />
+      </div>
+      <div>
+        <label for="lastName">Last Name:</label>
+        <input type="text" ng-model="reg.lastName" placeholder=" i.e. Chan"  required autofocus/>
+      </div>
+      <div>
+        <label for="emailAddress">Email Address:</label>
+        <input type="text" ng-model="reg.email" placeholder=" John.Chan@gmail.com"  required autofocus/>
+      </div>
+      <div>
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" placeholder=" 647-554-5268"  required autofocus/>
+      </div>
+      <button ng-click="workflowNext('step2')">Next &gt;</button>
+    </div>
+
+    <div class="ng-hide" ng-show="workflowStep == 'stepDone'">
+      You're all set!
+      <!-- <p>
+        Now you can choose to
+        <a href="client_registration.html">Advertise with Weyo</a>
+        OR
+        <a href="driver_registration.html">Become a Weyo Driver</a>
+      </p> -->
+    </div>
+
+      <!-- <p>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" />
+    </p> -->
+  </div>
+
+
+  <!-- <form>
+  <fieldset>
+  <p>
+  <a href="driver_login.html">Driver Login</a>
+</p>
+<p>
+<a href="client_login.html">Adertiser Login</a>
+</p>
+</fieldset>
+</form> -->
+
+<!-- <script src="js/bootstrap.min.js?body=1"></script> -->
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/hello/dist/hello.all.js"></script>
+<script src="bower_components/ng-hello/dist/ng-hello.min.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/homeApp.js"></script>
+<!-- <script src="scripts/controllers.js"></script> -->
+<!-- endbuild -->
+</body>
+</html>

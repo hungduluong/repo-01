@@ -1,0 +1,45 @@
+<div ng-show="showDriverRegistration">
+  <a ng-href="#/driverRegistration">Register as a driver now!</a>
+</div>
+
+<div class='row well well-lg'>
+  <div class='col-sm-6 col-md-6 col-xs-12'>
+
+    <p>
+      <label for="vehicle_campaign_no">Vehicle Campaign No.:</label>
+      <span id="vehicle_campaign_no">{{campaignNumber}}</span>
+    </p>
+    <p>
+      <label for="today_date">Today's Date:</label>
+      <span id="today_date">{{today}}</span>
+    </p>
+
+    <br/>
+    <h4>
+      Your Most recent trip:
+    </h4>
+    <br/>
+
+    <p>
+      <label for="start_time">Start Time:</label>
+      <span id="start_time">{{startTime}}</span>
+    </p>
+    <p>
+      <label for="end_time">End Time:</label>
+      <span id="end_time">{{endTime}}</span>
+    </p>
+    <p>
+      <label for="duration">Duration:</label>
+      <span id="duration">{{duration}}</span>
+    </p>
+    <p>
+      <label for="distance">Distance:</label>
+      <span id="distance">{{distance}}</span>
+    </p>
+    <p>
+      <label for="total_pay">Total Pay:</label>
+      <span id="total_pay">{{totalPay}}</span>
+    </p>
+
+  </div>
+</div>
